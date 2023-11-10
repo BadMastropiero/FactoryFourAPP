@@ -3,12 +3,14 @@ import { StyledServicesGrid } from './ServiceList.style';
 import StatusCard from './StatusCard/StatusCard';
 
 function ServiceList() {
-  const { services } = useServices();
+  const { services, history } = useServices();
 
   return (
     <>
       <StyledServicesGrid>
-        {services.map((s, i) => (s ? <StatusCard key={i} item={s} /> : null))}
+        {services.map((s, i) =>
+          s ? <StatusCard key={i} item={s} history={history[s.title]} /> : null,
+        )}
       </StyledServicesGrid>
     </>
   );

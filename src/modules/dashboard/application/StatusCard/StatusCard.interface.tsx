@@ -1,5 +1,6 @@
-import { ExtendedServiceStatus } from '../../domain/types';
+import { ExtendedServiceStatus, ServiceStatus } from '../../domain/types';
 
 export interface StatusCardProps {
   item: ExtendedServiceStatus;
+  history?: ServiceStatus[];
 }

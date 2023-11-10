@@ -3,26 +3,26 @@
 exports[`StatusCard > renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jSguLX etPCaA"
+    class="sc-iBPTVF fkgGZF"
     data-testid="styled-card"
   >
     <div
-      class="sc-bdfCDU cFAzbI"
+      class="sc-dlfmHC kkhjtW"
     >
       Server 1
     </div>
     <div
-      class="sc-gsTDqH fiKUpR"
+      class="sc-hKgKIp kHkhfO"
     >
       Healthy
     </div>
     <time
-      class="sc-dlfmHC"
+      class="sc-eCstZk"
     >
-      6:02:01 PM
+      7:02:01 PM
     </time>
     <div
-      class="sc-eCstZk"
+      class="sc-gKsecS"
     >
       localhost
     </div>

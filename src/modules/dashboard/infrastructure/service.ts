@@ -29,7 +29,7 @@ async function getStatus(name: string, init?: RequestInit) {
   if (!res?.ok) {
     const data: ServiceStatus = {
       ...error_status,
-      message: `${res?.status || ''}`,
+      message: `${res?.status || ''} ${res?.statusText || 'Service unavailable'}`,
     };
     return data;
   }

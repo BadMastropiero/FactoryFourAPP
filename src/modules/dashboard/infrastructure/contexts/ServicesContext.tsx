@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useMemo } from 'react';
+import { createContext, ReactNode, useContext, useMemo, useState } from 'react';
 import { useQueries } from 'react-query';
 
 import { SERVICE_STATUS_REFRESH_INTERVAL, SERVICES_LIST } from '../../../../config';
@@ -7,19 +7,32 @@ import { ServicesService } from '../service';
 
 interface IContextState {
   services: (ExtendedServiceStatus | undefined)[];
+  history: {
+    [title: string]: ServiceStatus[];
+  };
 }
 
 const initialState: IContextState = {
   services: [],
+  history: {},
 };
 
 export const ServicesContext = createContext<IContextState>(initialState);
 
 export function ServicesProvider({ children }: { children?: ReactNode | ReactNode[] }) {
+  const [history, setHistory] = useState<IContextState['history']>({});
+
   const queryConfigs = SERVICES_LIST.map((service) => ({
     queryKey: ['service', service],
     queryFn: () => ServicesService.getStatus(service),
-    refresherInterval: SERVICE_STATUS_REFRESH_INTERVAL,
+    refetchInterval: SERVICE_STATUS_REFRESH_INTERVAL,
+    onSuccess(data: ServiceStatus) {
+      setHistory((prevHistory) => {
+        const newHistory = { ...prevHistory };
+        newHistory[service] = [...(newHistory[service] || []), data];
+        return newHistory;
+      });
+    },
   }));
 
   const queryResults = useQueries(queryConfigs);
@@ -30,8 +43,9 @@ export function ServicesProvider({ children }: { children?: ReactNode | ReactNod
         ...(qr.data as ServiceStatus),
         title: queryConfigs[i].queryKey[1],
       })),
+      history,
     }),
-    [queryResults],
+    [queryResults, history],
   );
 
   return <ServicesContext.Provider value={state}>{children}</ServicesContext.Provider>;
