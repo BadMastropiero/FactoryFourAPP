@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar > renders correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-bdfCDU fjQoCB"
+  >
+    <nav
+      class="sc-gsTDqH gdwkMO"
+    >
+      <h3>
+        Test Navbar
+      </h3>
+    </nav>
+  </header>
+</DocumentFragment>
+`;

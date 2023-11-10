@@ -43,7 +43,8 @@ export const StyledCard = styled.div<{ selected: boolean }>`
   height: 250px;
   background-color: ${(props) => props.theme.colors.lighter.base};
   padding: ${(props) => [props.theme.layout.vGap, props.theme.layout.hGap].join(' ')};
-  transition: width 0.2s ${(props) => props.theme.easings.wiggle},
+  transition:
+    width 0.2s ${(props) => props.theme.easings.wiggle},
     box-shadow 0.1s ${(props) => props.theme.easings.base},
     transform 0.1s ${(props) => props.theme.easings.base};
   /* border: 1px solid ${(props) => props.theme.colors.primary.base}; */

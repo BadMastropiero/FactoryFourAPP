@@ -1,7 +1,17 @@
 import { NavbarProps } from './Nabvar.interface';
 import { StyledNavbar, StyledNavbarContent } from './Nabvar.style';
 
-export default function Navbar({ title }: NavbarProps) {
+// export default function Navbar({ title }: NavbarProps) {
+//   return (
+//     <StyledNavbar>
+//       <StyledNavbarContent>
+//         <h3>{title}</h3>
+//       </StyledNavbarContent>
+//     </StyledNavbar>
+//   );
+// }
+
+const Navbar: React.FC<NavbarProps> = ({ title }) => {
   return (
     <StyledNavbar>
       <StyledNavbarContent>
@@ -9,4 +19,6 @@ export default function Navbar({ title }: NavbarProps) {
       </StyledNavbarContent>
     </StyledNavbar>
   );
-}
+};
+
+export default Navbar;
