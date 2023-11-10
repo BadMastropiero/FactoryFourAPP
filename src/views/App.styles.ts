@@ -1,10 +1,21 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-export const Content = styled.div`
+export const StyledContent = styled.main`
   margin: auto;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: ${(props) => props.theme.layout.maxWidth};
+  padding: ${(props) => [props.theme.layout.vGap, props.theme.layout.hGap].join(' ')};
+`;
+
+export const StyledGlobal = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: ${(props) => props.theme.colors.lighter.base};
+    color: ${(props) => props.theme.colors.lighter.contrast};
+  }
 `;
