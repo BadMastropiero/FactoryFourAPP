@@ -19,6 +19,7 @@ export default function StatusCard({ item }: StatusCardProps) {
         setSelected((p) => !p);
       }}
       selected={selected}
+      data-testid="styled-card"
     >
       <StyledTitle>{item?.title}</StyledTitle>
       <StyledStatus success={item?.success}>

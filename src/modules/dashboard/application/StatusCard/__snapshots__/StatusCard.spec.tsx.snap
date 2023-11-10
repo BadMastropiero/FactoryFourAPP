@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StatusCard > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-jSguLX etPCaA"
+    data-testid="styled-card"
+  >
+    <div
+      class="sc-bdfCDU cFAzbI"
+    />
+    <div
+      class="sc-gsTDqH jONSNM"
+    >
+      Error
+    </div>
+    <time
+      class="sc-dlfmHC"
+    />
+    <div
+      class="sc-hKgKIp dhrbfv"
+    >
+       Outage 
+    </div>
+    <div
+      class="sc-eCstZk"
+    />
+  </div>
+</DocumentFragment>
+`;
