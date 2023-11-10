@@ -8,23 +8,24 @@ exports[`StatusCard > renders correctly 1`] = `
   >
     <div
       class="sc-bdfCDU cFAzbI"
-    />
-    <div
-      class="sc-gsTDqH jONSNM"
     >
-      Error
+      Server 1
+    </div>
+    <div
+      class="sc-gsTDqH fiKUpR"
+    >
+      Healthy
     </div>
     <time
       class="sc-dlfmHC"
-    />
-    <div
-      class="sc-hKgKIp dhrbfv"
     >
-       Outage 
-    </div>
+      6:02:01 PM
+    </time>
     <div
       class="sc-eCstZk"
-    />
+    >
+      localhost
+    </div>
   </div>
 </DocumentFragment>
 `;

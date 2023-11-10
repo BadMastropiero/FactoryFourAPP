@@ -5,16 +5,15 @@ import { ThemeProvider } from 'styled-components';
 import { describe, expect, it } from 'vitest';
 
 import { theme } from '../../../../styles/theme';
+import { ExtendedServiceStatus } from '../../domain/types';
 import StatusCard from './StatusCard';
-import { StatusCardProps } from './StatusCard.interface';
 
-const mockStatus: StatusCardProps = {
-  item: {
-    title: 'Server 1',
-    success: true,
-    time: '2021-04-22T10:20:30Z',
-    hostname: 'localhost',
-  },
+const mockStatus: ExtendedServiceStatus = {
+  title: 'Server 1',
+  success: true,
+  time: 121212,
+  hostname: 'localhost',
+  message: '',
 };
 
 describe('StatusCard', () => {
